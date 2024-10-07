@@ -556,7 +556,7 @@ header .container .titles .call-to-action span {
     padding: 2rem 1rem;
     color: white;
     width: 20%;
-    min-width: 230px;
+    min-width: 190px;
 }
 .services .cards .card:hover {
     background-color: var(--black);
