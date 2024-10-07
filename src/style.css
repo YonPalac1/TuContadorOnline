@@ -659,6 +659,11 @@ header .container .titles .call-to-action span {
         min-width: 180px;
     }
 }
+@media screen and (max-width: 428px) {
+    .how-works .cards h3 {
+        font-size: 16px;
+    }
+}
 /* contact-to-meet */
 .contact-to-meet {
     padding: 5rem 0;
