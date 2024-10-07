@@ -87,16 +87,16 @@ export const QUESTIONS = [{
     a: "Nuestro estudio ofrece una varieddad de servicios contables"
 },{
     q: "¿Cuanto cuesta su servicio de preparacion de declaraciones de impuestos?",
-    a: "respuesta 2"
+    a: "Nuestro estudio ofrece una variedad de servicios contables, incluyendo preparación de declaraciones de impuestos, contabilidad financiera, auditorias, consultoria financiera y planificación tributaria."
 },{
     q: "¿Necesito contratar a un contador para mi negocio?",
-    a: "respuesta 3"
+    a: "Al emprender, todos intentamos realizar TODO por nosotros mismos. Sin embargo, contar con asesoramiento experto te ahorrará mucho tiempo, riesgos, y dolores de cabeza. Asegurá el éxito de tu proyecto."
 },{
-    q: "Pueden ayudarme con la planificacion tributaria y la optimizacion de impuestos?",
-    a: "respuesta 4"
+    q: "¿Como protegen mi información?",
+    a: "El código de ética que regula el ejercicio de la profesión contable establece la obligación de mantener el SECRETO PROFESIONAL. Toda información que compartas con nosotros será siempre tratada bajo la más estricta CONFIDENCIALIDAD. No divulgamos ningún dato sin autorización previa. Consultá con tranquilidad."
 },{
-    q: "¿Como puedo obtener mas informacion sobre sus servicios y programar una consulta?",
-    a: "respuesta 5"
+    q: "¿Como solicito la baja?",
+    a: "Si por algún motivo, sentís que Contablix no es para vos, podés cancelar el servicio en cualquier momento. Tendrás 15 días para descargar tu información, luego la eliminaremos de forma definitiva de nuestros servidores."
 },] 
 
 export const DIRECTIONS = [{

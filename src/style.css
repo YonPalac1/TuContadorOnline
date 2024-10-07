@@ -7,7 +7,9 @@
     font-family: montserrat;
     src: url('./fonts/montserrat/Montserrat-Light.ttf')
 }
-
+html {
+    scroll-behavior: smooth;
+  }
 :root {
     --poppins: poppins;
     --montserrat: montserrat;
@@ -38,6 +40,7 @@ body {
     flex-direction: column;
     background: rgb(35,75,155);
     background: linear-gradient(0deg, rgba(35,75,155,1) 38%, rgba(80,180,225,1) 100%); 
+    animation: appear 0.5s ease-in-out 1;
     
 }
 .loading img {
@@ -54,8 +57,19 @@ body {
     border: 1px solid var(--dark-gray);
     width: 100px;
     height: 100px;
-    animation: spin 5s linear infinite;
-    margin-top: 100px;
+    animation: spin 5s linear;
+    margin-top: 50px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.loading .square .dot {
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    border: 2px solid var(--dark-gray);
+    animation: spin 2s ease-in-out;
 }
 @keyframes spin {
  0% {
@@ -154,9 +168,13 @@ nav .container ul {
     font-family: var(--montserrat);
     color: var(--gray);
     gap: 2rem;
+} 
+nav .items ul li a {
+    color: var(--gray);
+    text-decoration: none;
 }
-nav.scrolled .items ul li {
-    color: var(--black);
+nav.scrolled .items ul li a {
+    color: black;
 }
 nav .container .contact button {
     background-color: var(--dark-blue);
@@ -209,6 +227,9 @@ nav .mobile .burger {
         width: 100%;
         height: 100%;
         padding: 1rem;
+    }
+    nav .mobile .items ul li a {
+        color: black;
     }
     nav .mobile .items ul li:hover {
         background: var(--blue);
@@ -331,7 +352,6 @@ header .container .titles .call-to-action span {
     }
     header .container .image img {
         position: absolute;
-        right: 0;
         z-index: 0;
     }
 }
@@ -699,7 +719,7 @@ header .container .titles .call-to-action span {
 
 /* questions */
 .frecuent-questions {
-    
+    position: relative;
     background: rgb(35,75,155);
     background: linear-gradient(0deg, rgb(6, 27, 71) 38%, rgba(80,180,225,1) 100%); 
 }
@@ -744,10 +764,13 @@ header .container .titles .call-to-action span {
     position: relative;
     height: 0;
     overflow: hidden;
+    text-align: left;
+    
     transition: height 0.35s ease;
 }
 .questions .answer.show {
     height: auto;
+    margin-top: 2rem;
 }
 .questions-cards {
     margin-top: 2rem;

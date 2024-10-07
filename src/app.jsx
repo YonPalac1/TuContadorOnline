@@ -54,7 +54,7 @@ const Home = () => {
                 </div>
             </div>
         </header>
-        <section className="quelities">
+        <section className="quelities" id="nosotros">
             <div className="container">
                 <QualitiesCards />
             </div>
@@ -98,7 +98,7 @@ const Home = () => {
             </div>
         </section>
 
-        <section className="services">
+        <section className="services" id="servicios">
             <div className="container">
                 <Reveal delay={0.35}>
                     <span>nuestros servicios</span>
@@ -108,7 +108,7 @@ const Home = () => {
             </div>
         </section>
 
-        <section className="how-works">
+        <section className="how-works" id="como-trabajamos">
             <div className="container">
                 <Reveal delay={0.35}>
                     <div className="title">
@@ -121,7 +121,7 @@ const Home = () => {
             </div>
         </section>
 
-        <section className="contact-to-meet">
+        <section className="contact-to-meet" id="hablemos">
             <div className="container">
                 <div className="image">
                     <Reveal delay={0.35}>
@@ -155,7 +155,7 @@ const Home = () => {
             </Reveal>
         </section >
 
-        <section className="frecuent-questions">
+        <section className="frecuent-questions" id="preguntas-frecuentes">
             <div className="container">
                 <span>¿Algunas dudas?</span>
                 <h2>Preguntas frecuentes</h2>
@@ -221,7 +221,9 @@ const App = () => {
             <div className="loading">
                 {/* <img src={template} alt="" /> */}
                 <h2>Tu Contador Online</h2>
-                <div className="square"></div>
+                <div className="square">
+                    <div className="dot"></div>
+                </div>
             </div>
             :
             <Home />
