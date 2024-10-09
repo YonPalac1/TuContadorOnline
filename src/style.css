@@ -433,6 +433,9 @@ header .container .titles .call-to-action span {
     }
 }
 /* quelities */
+.quelities {
+    position: relative;
+}
 .quelities svg {
     position: absolute;
 }
