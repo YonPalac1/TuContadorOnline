@@ -32,11 +32,7 @@ const App = () => {
     }, [])
     return <>
         <div className={`loading ${loading ? "animate" : ""}`}>
-            {!loading ?
-                <h2>Tu Contador Online</h2>
-                :
-                ""
-            }
+            <h2>Tu Contador Online</h2>
             <div className="square">
                 <div className="dot"></div>
             </div>
@@ -104,7 +100,7 @@ const App = () => {
                         </p>
                     </Reveal>
 
-                    <Reveal delay={0.35}>
+                    <Reveal delay={0.80}>
                         <div className="contact">
                             <button>leer más</button>
 
