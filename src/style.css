@@ -33,15 +33,22 @@ body {
 /* global */
 .loading {
     width: 100%;
-    height: 100vh;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     background: rgb(35,75,155);
     background: linear-gradient(0deg, rgba(35,75,155,1) 38%, rgba(80,180,225,1) 100%); 
-    animation: appear 0.5s ease-in-out 1;
-    
+    z-index: 20;
+    position: fixed;
+    overflow: hidden;
+    top: 0;
+    left: 0;    
+}
+.loading.animate {
+    animation: disappear 1s ease-in-out 1;
+    height: 0;
 }
 .loading img {
     position: absolute;
@@ -68,15 +75,17 @@ body {
     width: 80px;
     height: 80px;
     position: absolute;
-    border: 2px solid var(--dark-gray);
+    border: 1px solid var(--dark-gray);
     animation: spin 2s ease-in-out;
 }
 @keyframes spin {
  0% {
     transform: rotate(0deg);
+    opacity: 1;
  }
  100% {
     transform: rotate(360deg);
+    opacity: 0;
  }
 }
 @keyframes animation {
@@ -89,6 +98,17 @@ body {
         transform: translateY(0);
     }
 }
+@keyframes disappear {
+    0% {
+        height: 100vh;
+        opacity: 1;
+    }
+    100% {
+        height: 0;
+        opacity: 0;
+    }
+}
+
 .loading p {
     z-index: 5;
     color: var(--dark-gray);
@@ -240,7 +260,7 @@ nav .mobile .burger {
 /* header */
 header {
     background: rgb(35,75,155);
-    background: linear-gradient(0deg, rgba(35,75,155,1) 38%, rgba(80,180,225,1) 100%); 
+    background: linear-gradient(0deg, rgb(35, 75, 156) 38%, rgba(80,180,225,1) 100%); 
     padding-top: 8rem;
     position: relative;
 }
@@ -269,6 +289,7 @@ header .container .titles p.name {
     background: linear-gradient(87deg, rgba(35,75,155,1) 38%, rgba(80,180,225,1) 100%); 
     padding: 1rem 1rem;
     border: 1px solid var(--blue);
+    margin-bottom: 1rem;
 }
 header .container .titles h1 {
     font-size: 4rem;
@@ -412,6 +433,9 @@ header .container .titles .call-to-action span {
     }
 }
 /* quelities */
+.quelities svg {
+    position: absolute;
+}
 .quelities .cards {
     display: flex;
     text-align: center;
@@ -578,6 +602,10 @@ header .container .titles .call-to-action span {
     padding: 5rem 0;
     position: relative;
 }
+.how-works svg {
+    position: absolute;
+    top: 0;
+}
 .how-works .image-bg {
     position: absolute;
     bottom: 0;
@@ -666,7 +694,12 @@ header .container .titles .call-to-action span {
 }
 /* contact-to-meet */
 .contact-to-meet {
-    padding: 5rem 0;
+    padding: 8rem 0;
+    position: relative;
+}
+.contact-to-meet svg {
+    position: absolute;
+    top: -2px;
 }
 .contact-to-meet .container {
     display: flex;
@@ -712,6 +745,12 @@ header .container .titles .call-to-action span {
         width: 100%;
     }
 }
+@media screen and (max-width: 396px) {
+    .contact-to-meet {
+        padding: 5rem 0;
+        position: relative;
+    }
+}
 /* clients-feedback */
 .clients-feedback {
     background-color: var(--dark-gray);
@@ -728,6 +767,11 @@ header .container .titles .call-to-action span {
     background: rgb(35,75,155);
     background: linear-gradient(0deg, rgb(6, 27, 71) 38%, rgba(80,180,225,1) 100%); 
 }
+.frecuent-questions svg {
+    position: absolute;
+    top: 0;
+    z-index: 1;
+}
 .frecuent-questions span,
 .frecuent-questions h2 {
     color: var(--gray);
@@ -738,6 +782,8 @@ header .container .titles .call-to-action span {
     text-align: center;
     background-color: var(--dark-blue);
     padding: 5rem 3rem;
+    z-index: 5;
+    position: relative;
 }
 .questions {
     margin-bottom: 2rem;

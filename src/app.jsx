@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 
 import Cards from "./components/Cards";
 import QualitiesCards from "./components/QualitiesCards";
@@ -15,26 +15,46 @@ import girl from "./assets/images/girl_meet.png"
 import facebook from "./assets/images/facebook.png"
 import whatsapp from "./assets/images/whatsapp.png"
 import instagram from "./assets/images/instagram.png"
-import template from "./assets/images/template.webp"
 import { CARDS_SERVICES } from "./constants";
 import { Reveal } from "./commons/Reveal";
 
-const Home = () => {
+const App = () => {
+    const [loading, setLoading] = useState(false);
+
+    useEffect(() => {
+        const interval = setTimeout(() => {
+            window.scrollTo(0, 0)
+            setLoading(true)
+        }, 2000);
+
+        //Clearing the interval
+        return () => clearInterval(interval);
+    }, [])
     return <>
+        <div className={`loading ${loading ? "animate" : ""}`}>
+            {!loading ?
+                <h2>Tu Contador Online</h2>
+                :
+                ""
+            }
+            <div className="square">
+                <div className="dot"></div>
+            </div>
+        </div>
         <Navbar />
         <header>
             <div className="container">
                 <div className="titles">
-                    <Reveal delay={0.25}>
+                    <Reveal delay={2.50}>
                         <p className="name">Tu contador online</p>
                     </Reveal>
-                    <Reveal delay={0.45}>
+                    <Reveal delay={2.80}>
                         <h1>Soluciones financieras para tu negocio</h1>
                     </Reveal>
-                    <Reveal delay={0.65}>
+                    <Reveal delay={3}>
                         <p>Asesoramiento personalizado con profesionales experimentados para darte servicios contables integrales</p>
                     </Reveal>
-                    <Reveal delay={0.85}>
+                    <Reveal delay={3.25}>
                         <button className="call-to-action">
                             <div>
                                 asesorate ahora
@@ -48,13 +68,15 @@ const Home = () => {
                 </div>
 
                 <div className="image">
-                    <Reveal delay={0.85}>
+                    <Reveal delay={3.85}>
                         <img src={header} alt=""></img>
                     </Reveal>
                 </div>
             </div>
         </header>
         <section className="quelities" id="nosotros">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#234b9b" d="M0,160L60,154.7C120,149,240,139,360,117.3C480,96,600,64,720,64C840,64,960,96,1080,101.3C1200,107,1320,85,1380,74.7L1440,64L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z"></path></svg>
+
             <div className="container">
                 <QualitiesCards />
             </div>
@@ -85,7 +107,7 @@ const Home = () => {
                     <Reveal delay={0.35}>
                         <div className="contact">
                             <button>leer más</button>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="icon icon-tabler icons-tabler-outline icon-tabler-phone"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M5 4h4l2 5l-2.5 1.5a11 11 0 0 0 5 5l1.5 -2.5l5 2v4a2 2 0 0 1 -2 2a16 16 0 0 1 -15 -15a2 2 0 0 1 2 -2" /></svg>
+
                             <div>
                                 <p>Dejanos tu mensaje en:
                                     <br />
@@ -122,6 +144,7 @@ const Home = () => {
         </section>
 
         <section className="contact-to-meet" id="hablemos">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#234b9b" d="M0,96L120,90.7C240,85,480,75,720,96C960,117,1200,171,1320,197.3L1440,224L1440,0L1320,0C1200,0,960,0,720,0C480,0,240,0,120,0L0,0Z"></path></svg>
             <div className="container">
                 <div className="image">
                     <Reveal delay={0.35}>
@@ -156,6 +179,7 @@ const Home = () => {
         </section >
 
         <section className="frecuent-questions" id="preguntas-frecuentes">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#e1f4f5" d="M0,160L60,138.7C120,117,240,75,360,53.3C480,32,600,32,720,53.3C840,75,960,117,1080,144C1200,171,1320,181,1380,186.7L1440,192L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z"></path></svg>
             <div className="container">
                 <span>¿Algunas dudas?</span>
                 <h2>Preguntas frecuentes</h2>
@@ -204,32 +228,5 @@ const Home = () => {
     </>
 }
 
-const App = () => {
-    const [loading, setLoading] = useState(false);
-
-    useEffect(() => {
-        const interval = setTimeout(() => {
-            setLoading(true)
-        }, 3000);
-
-        //Clearing the interval
-        return () => clearInterval(interval);
-    }, [])
-
-    return (<> {
-        !loading ?
-            <div className="loading">
-                {/* <img src={template} alt="" /> */}
-                <h2>Tu Contador Online</h2>
-                <div className="square">
-                    <div className="dot"></div>
-                </div>
-            </div>
-            :
-            <Home />
-    }
-    </>
-    )
-}
 
 export default App;
