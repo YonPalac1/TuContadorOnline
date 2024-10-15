@@ -17,6 +17,7 @@ import whatsapp from "./assets/images/whatsapp.png"
 import instagram from "./assets/images/instagram.png"
 import { CARDS_SERVICES } from "./constants";
 import { Reveal } from "./commons/Reveal";
+import WhatsappIcon from "./components/Whatsapp";
 
 const App = () => {
     const [loading, setLoading] = useState(false);
@@ -36,6 +37,9 @@ const App = () => {
             <div className="square">
                 <div className="dot"></div>
             </div>
+        </div>
+        <div className="icon-whatsapp">
+            <WhatsappIcon />
         </div>
         <Navbar />
         <header>
@@ -140,7 +144,7 @@ const App = () => {
         </section>
 
         <section className="contact-to-meet" id="hablemos">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#234b9b" d="M0,96L120,90.7C240,85,480,75,720,96C960,117,1200,171,1320,197.3L1440,224L1440,0L1320,0C1200,0,960,0,720,0C480,0,240,0,120,0L0,0Z"></path></svg>
+            <svg viewBox="0 0 1440 320"><path fill="#234b9b" fill-opacity="1" d="M0,64L120,58.7C240,53,480,43,720,64C960,85,1200,139,1320,165.3L1440,192L1440,0L1320,0C1200,0,960,0,720,0C480,0,240,0,120,0L0,0Z"></path></svg>
             <div className="container">
                 <div className="image">
                     <Reveal delay={0.35}>
@@ -172,17 +176,32 @@ const App = () => {
                     <h3>John Doe</h3>
                 </div>
             </Reveal>
-        </section >
+        </section>
 
         <section className="frecuent-questions" id="preguntas-frecuentes">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#e1f4f5" d="M0,160L60,138.7C120,117,240,75,360,53.3C480,32,600,32,720,53.3C840,75,960,117,1080,144C1200,171,1320,181,1380,186.7L1440,192L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z"></path></svg>
             <div className="container">
-                <span>¿Algunas dudas?</span>
                 <h2>Preguntas frecuentes</h2>
 
                 <div className="questions-cards">
                     <Questions />
                 </div>
+            </div>
+        </section>
+
+        <section className="contact-form">
+            <div className="container">
+                <span>¿Algunas dudas?</span>
+                <h2>Dejanos tu consulta</h2>
+                <form>
+                    <label>Nombre</label>
+                    <input type="text" placeholder="Nombre"></input>
+                    <label>Email</label>
+                    <input type="text" placeholder="Email"></input>
+                    <label>Mensaje</label>
+                    <textarea type="text" placeholder="Mensaje"></textarea>
+                    <button>Enviar</button>
+                </form>
             </div>
         </section>
 

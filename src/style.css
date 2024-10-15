@@ -176,6 +176,12 @@ ul li {
     flex-direction: column;
     align-items: center;
 }
+.icon-whatsapp {
+    position: fixed;
+    right: 1rem;
+    bottom: 1rem;
+    z-index: 100;
+}
 
 /* global */
 nav {
@@ -190,11 +196,12 @@ nav.scrolled {
 nav .container {
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 nav .container ul {
     display: flex;
-    font-size: 1.3rem;
+    font-size: 1rem;
     font-family: var(--montserrat);
     color: var(--gray);
     gap: 2rem;
@@ -205,6 +212,9 @@ nav .items ul li a {
 }
 nav.scrolled .items ul li a {
     color: black;
+}
+nav.scrolled .items ul li:hover {
+    border-bottom: 2px solid var(--dark-blue);
 }
 nav .container .contact button {
     background-color: var(--dark-blue);
@@ -273,6 +283,9 @@ header {
     background: linear-gradient(0deg, rgb(35, 75, 156) 38%, rgba(80,180,225,1) 100%); 
     padding-top: 8rem;
     position: relative;
+    /* background-color: #50b4e1; */
+    /* background-image: url("https://www.transparenttextures.com/patterns/cubes.png"); */
+    /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
 }
 header .container {
     display: flex;
@@ -774,6 +787,7 @@ header .container .titles .call-to-action span {
     margin-top: 2rem;
 }
 
+
 /* questions */
 .frecuent-questions {
     position: relative;
@@ -838,6 +852,48 @@ header .container .titles .call-to-action span {
 }
 .questions-cards {
     margin-top: 2rem;
+}
+
+/* contact-form */
+.contact-form {
+    position: relative;
+    background: rgb(35,75,155);
+    background: linear-gradient(0deg, rgb(0, 6, 18) 38%, rgba(6, 27, 71) 100%); 
+    text-align: center;
+    padding: 8rem 2rem;
+}
+.contact-form h2 {
+    color: var(--gray);
+}
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+    font-family: var(--montserrat);
+    max-width: 1000px;
+    margin: auto;
+    text-align: left;
+}
+.contact-form form label {
+    margin-top: 1.3rem;
+    color: var(--gray);
+}
+.contact-form form input {
+    padding: 12px;
+}
+.contact-form form textarea {
+    min-height: 150px;
+}
+.contact-form form button {
+    color: var(--gray);
+    background-color: var(--blue);
+    margin-top: 2rem;
+    padding: 1rem 2rem;
+    cursor: pointer;
+}
+.contact-form form button:hover {
+    background: rgb(35,75,155);
+    background: linear-gradient(87deg, rgb(74, 120, 212) 38%, rgb(31, 80, 177) 100%); 
+
 }
 /* Footer */
 .footer {
