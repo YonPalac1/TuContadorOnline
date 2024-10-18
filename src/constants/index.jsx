@@ -112,3 +112,20 @@ export const DIRECTIONS = [{
     type: "dirección",
     address: "Calle 1234, ciudad"
 }]
+
+export const FEEDBACK = [{
+    comment: "Me encantó la experiencia con TuContadorOnline. La atención es personalizada y rápida, siempre están dispuestos a ayudar. ¡Gracias por hacer que mi contabilidad sea tan fácil!",
+    name: "Ana G."
+}, {
+    comment: "Después de intentar con otros servicios, encontré en TuContadorOnline la calidez y eficiencia que buscaba. ¡Son los mejores!",
+    name: "Juan M."
+},{
+    comment: "TuContadorOnline es más que un servicio de contaduría, es un equipo que se preocupa por ti. La atención es inmediata y siempre resuelven mis dudas.",
+    name: "María T."
+},{
+    comment: "Me sorprendió la rapidez con la que TuContadorOnline resolvió mi problema. ¡Son profesionales y amables! ¡Altamente recomendados!",
+    name: "Carlos R."
+},{
+    comment: "Con TuContadorOnline, puedo dormir tranquilo sabiendo que mi contabilidad está en buenas manos. La atención es excepcional y siempre están disponibles",
+    name: "CarloLaura S."
+},]

@@ -181,6 +181,13 @@ ul li {
     right: 1rem;
     bottom: 1rem;
     z-index: 100;
+    background-color: white;
+    border-radius: 100%;
+    width: 30px;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 /* global */
@@ -249,6 +256,7 @@ nav .mobile .burger {
         height: 0;
         overflow: hidden;
         transition: 1s ease;
+        top: 1rem;
     }
     nav .mobile .items.open {
         height: max-content;
@@ -270,6 +278,8 @@ nav .mobile .burger {
     }
     nav .mobile .items ul li a {
         color: black;
+        width: 100%;
+        display: block;
     }
     nav .mobile .items ul li:hover {
         background: var(--blue);
@@ -458,6 +468,8 @@ header .container .titles .call-to-action span {
 /* quelities */
 .quelities {
     position: relative;
+    
+    background-image: url("./assets/images/fake-luxury.png");
 }
 .quelities svg {
     position: absolute;
@@ -520,9 +532,12 @@ header .container .titles .call-to-action span {
     }
 }
 /* talent */
+.talent {
+    background-image: url("./assets/images/fake-luxury.png");
+}
 .talent .container {
     display: flex;
-    padding-top: 5rem;
+    padding: 5rem 0;
 }
 .talent .container .image img {
     width: 100%;
@@ -591,7 +606,7 @@ header .container .titles .call-to-action span {
 .services {
     background-color: var(--dark-gray);
     text-align: center;
-    margin-top: 5rem;
+    
     padding: 5rem 0;
 }
 .services .cards {
@@ -722,6 +737,8 @@ header .container .titles .call-to-action span {
 .contact-to-meet {
     padding: 8rem 0;
     position: relative;
+    background-color: var(--gray);
+    background-image: url("./assets/images/fake-luxury.png");
 }
 .contact-to-meet svg {
     position: absolute;
@@ -786,8 +803,41 @@ header .container .titles .call-to-action span {
 .clients-feedback p {
     margin-top: 2rem;
 }
+.clients-feedback .feedbacks {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.clients-feedback .feedbacks .bullets {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+}
 
-
+.clients-feedback .feedbacks span {
+    width: 10px;
+    height: 10px;
+    background-color: var(--black);
+    position: relative;
+    display: flex;
+    border-radius: 100%;
+}
+.clients-feedback .feedbacks .bullet-0 span:nth-child(1) {
+    background-color: rgb(17, 255, 255);
+}
+.clients-feedback .feedbacks .bullet-1 span:nth-child(2) {
+    background-color: rgb(17, 255, 255);
+}
+.clients-feedback .feedbacks .bullet-2 span:nth-child(3) {
+    background-color: rgb(17, 255, 255);
+}
+.clients-feedback .feedbacks .bullet-3 span:nth-child(4) {
+    background-color: rgb(17, 255, 255);
+}
+.clients-feedback .feedbacks .bullet-4 span:nth-child(5) {
+    background-color: rgb(17, 255, 255);
+}
 /* questions */
 .frecuent-questions {
     position: relative;
@@ -857,13 +907,13 @@ header .container .titles .call-to-action span {
 /* contact-form */
 .contact-form {
     position: relative;
-    background: rgb(35,75,155);
-    background: linear-gradient(0deg, rgb(0, 6, 18) 38%, rgba(6, 27, 71) 100%); 
+    background-color: var(--gray);
+    background-image: url("./assets/images/fake-luxury.png");
     text-align: center;
-    padding: 8rem 2rem;
+    padding: 5rem 2rem;
 }
 .contact-form h2 {
-    color: var(--gray);
+    color: var(--blue);
 }
 .contact-form form {
     display: flex;
@@ -875,9 +925,11 @@ header .container .titles .call-to-action span {
 }
 .contact-form form label {
     margin-top: 1.3rem;
-    color: var(--gray);
+    margin-bottom: 8px;
+    color: var(--blue);
 }
-.contact-form form input {
+.contact-form form input,
+.contact-form form textarea {
     padding: 12px;
 }
 .contact-form form textarea {

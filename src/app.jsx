@@ -18,6 +18,7 @@ import instagram from "./assets/images/instagram.png"
 import { CARDS_SERVICES } from "./constants";
 import { Reveal } from "./commons/Reveal";
 import WhatsappIcon from "./components/Whatsapp";
+import Feedback from "./components/Feedback";
 
 const App = () => {
     const [loading, setLoading] = useState(false);
@@ -163,7 +164,23 @@ const App = () => {
                     </div>
                 </Reveal>
             </div>
-        </section >
+        </section>
+        <section className="contact-form">
+            <div className="container">
+
+                <span>¿Algunas dudas?</span>
+                <h2>Dejanos tu consulta</h2>
+                <form>
+                    <label>Nombre</label>
+                    <input type="text" placeholder="Nombre"></input>
+                    <label>Email</label>
+                    <input type="text" placeholder="Email"></input>
+                    <label>Mensaje</label>
+                    <textarea type="text" placeholder="Mensaje"></textarea>
+                    <button>Enviar</button>
+                </form>
+            </div>
+        </section>
 
         <section className="clients-feedback">
             <Reveal delay={0.35}>
@@ -171,9 +188,7 @@ const App = () => {
                     <span>Lo que dicen de nosotros</span>
                     <h2>Feedback de nuestros clientes</h2>
 
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit perspiciatis ratione veniam repellendus, enim adipisci distinctio expedita, laudantium alias, inventore delectus dolore quo dolor ducimus officiis magni aliquid corporis rerum?</p>
-
-                    <h3>John Doe</h3>
+                    <Feedback />
                 </div>
             </Reveal>
         </section>
@@ -189,21 +204,7 @@ const App = () => {
             </div>
         </section>
 
-        <section className="contact-form">
-            <div className="container">
-                <span>¿Algunas dudas?</span>
-                <h2>Dejanos tu consulta</h2>
-                <form>
-                    <label>Nombre</label>
-                    <input type="text" placeholder="Nombre"></input>
-                    <label>Email</label>
-                    <input type="text" placeholder="Email"></input>
-                    <label>Mensaje</label>
-                    <textarea type="text" placeholder="Mensaje"></textarea>
-                    <button>Enviar</button>
-                </form>
-            </div>
-        </section>
+        
 
         <footer className="footer">
             <div className="container">
