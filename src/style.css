@@ -674,7 +674,8 @@ header .container .titles .call-to-action div {
 /* how works */
 .how-works {
     background: var(--brown);
-    padding: 5rem 0;
+    background-image: url("./assets/images/geometry.png");
+    padding: 5rem 2rem 0;
     position: relative;
 }
 .how-works svg {
@@ -714,13 +715,13 @@ header .container .titles .call-to-action div {
 }
 .how-works .card {
     min-width: 200px;
-    background-color: white;
+    background-color: var(--blue);
     padding: 1rem;
-    border-radius: 20px;
-    text-align: right;
+    border: 5px double var(--orange);
+    text-align: center;
     position: relative;
     display: flex;
-    align-items: end;
+    align-items: center;
     flex-direction: column;
     z-index: 1;
 }
@@ -728,12 +729,10 @@ header .container .titles .call-to-action div {
     position: absolute;
     left: 0;
     top: -1rem;
-    background-color: var(--blue
-    );
-    color: white;
+    color: var(--gray);
     width: 40px;
     padding: 5px;
-    font-size: 12px;
+    font-size: 1rem;
 }
 .how-works .card .image {
     width: 50px;
@@ -741,12 +740,18 @@ header .container .titles .call-to-action div {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: var(--dark-gray);
+    background-color: var(--orange);
     border-radius: 50%;
     position: relative;
 }
 .how-works p {
     color: var(--gray);
+    margin-top: 2rem;
+}
+.how-works h3 {
+    color: var(--yellow);
+    /* font-family: var(--montserrat); */
+    font-weight: lighter;
     margin-top: 2rem;
 }
 @media screen and (max-width: 952px) {
@@ -778,7 +783,7 @@ header .container .titles .call-to-action div {
     padding: 8rem 0;
     position: relative;
     background-color: var(--gray);
-    background-image: url("./assets/images/fake-luxury.png");
+    background-image: url("./assets/images/connected.png");
 }
 .contact-to-meet svg {
     position: absolute;

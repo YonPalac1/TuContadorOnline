@@ -20,7 +20,6 @@ export const HowWorksCards = ({ item, index }) => {
     initial="hidden"
     animate={mainControls}
     transition={{ duration: 0.5, delay: 0.35 }}  className="card">
-        <p>{index}.</p>
         <div className="image">
             <img src={item.img} alt="" />
         </div>

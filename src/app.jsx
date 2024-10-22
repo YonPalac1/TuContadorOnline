@@ -127,7 +127,7 @@ const App = () => {
         </section>
 
         <section className="contact-to-meet" id="hablemos">
-            <svg viewBox="0 0 1440 320"><path fill="#234b9b" fill-opacity="1" d="M0,64L120,58.7C240,53,480,43,720,64C960,85,1200,139,1320,165.3L1440,192L1440,0L1320,0C1200,0,960,0,720,0C480,0,240,0,120,0L0,0Z"></path></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#ae6522" fill-opacity="1" d="M0,64L1440,128L1440,0L0,0Z"></path></svg>
             <div className="container">
                 <div className="image">
                     <Reveal delay={0.35}>
