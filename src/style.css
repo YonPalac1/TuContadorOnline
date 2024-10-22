@@ -542,7 +542,6 @@ header .container .titles .call-to-action div {
 .talent .container {
     background-color: var(--yellow);
     display: flex;
-    min-width: 100%;
     clip-path: polygon(0% 0%, 100% 5%, 98% 100%, 0% 100%);
     position: relative;
 }
