@@ -537,9 +537,8 @@ header .container .titles .call-to-action div {
 .talent .container {
     background-color: var(--yellow);
     display: flex;
-    border-radius: 2rem;
-    max-width: 80%;
-    overflow: hidden;
+    min-width: 100%;
+    clip-path: polygon(0% 0%, 100% 5%, 98% 100%, 0% 100%);
 }
 .talent .container .image {
     background-image: url("./assets/images/washi.png");
@@ -674,8 +673,7 @@ header .container .titles .call-to-action div {
 }
 /* how works */
 .how-works {
-    background: rgb(35,75,155);
-    background: linear-gradient(0deg, rgba(35,75,155,1) 38%, rgba(80,180,225,1) 100%); 
+    background: var(--brown);
     padding: 5rem 0;
     position: relative;
 }
@@ -701,9 +699,12 @@ header .container .titles .call-to-action div {
 .how-works h2 {
     color: var(--gray);
     line-height: 2rem;
+    font-size: 2rem;
+    margin-top: 1rem;
 }
 .how-works span {
     color: white;
+    font-size: 1.5rem;
 }
 .how-works .cards {
     display: grid;
@@ -754,6 +755,9 @@ header .container .titles .call-to-action div {
     }
 }
 @media screen and (max-width: 690px) {
+    .how-works {
+        padding: 2rem;
+    }
     .how-works .container {
         flex-direction: column;
     }
