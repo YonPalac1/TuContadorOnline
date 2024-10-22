@@ -624,6 +624,14 @@ header .container .titles .call-to-action div {
         max-width: 100%;
     }
 }
+@media screen and (max-width: 635px) {
+    .talent .container .image {
+        padding: 2rem 0;
+    }
+    .talent .container .image img {
+        max-width: 300px;
+    }
+}
 /* Services */
 .services {
     text-align: center;
