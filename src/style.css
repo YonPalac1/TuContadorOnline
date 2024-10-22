@@ -279,7 +279,7 @@ nav .mobile .burger {
 }
 /* header */
 header {
-    padding-top: 6rem;
+    padding-top: 5rem;
     padding-bottom: 4rem;
     position: relative;
     border-radius: 2rem;
@@ -376,18 +376,18 @@ header .container .titles .call-to-action div {
         font-size: 1rem;
     }
 }
-@media screen and (max-width: 1044px) {
+
+@media screen and (max-width: 1435px) {
     header .container .titles {
         padding: 3rem;
     }
     header .container .titles h1 {
-        font-size: 4.5rem;
-        line-height: 4rem;
+        /* font-size: 4.5rem; 
+        line-height: 4rem; */
+        width: 90%;
     }
-}
-@media screen and (max-width: 936px) {
-    header .container .image img {
-        width: 350px;
+    header .container .image img { 
+        width: 400px;
     }
 }
 @media screen and (max-width: 896px) {
@@ -539,6 +539,12 @@ header .container .titles .call-to-action div {
     display: flex;
     min-width: 100%;
     clip-path: polygon(0% 0%, 100% 5%, 98% 100%, 0% 100%);
+    position: relative;
+}
+.talent .container .sun {
+    position: absolute;
+    bottom: 0;
+    right: 0;
 }
 .talent .container .image {
     background-image: url("./assets/images/washi.png");
@@ -591,13 +597,17 @@ header .container .titles .call-to-action div {
     border-radius: 5px;
 }
 .talent .container .description .contact button {
-    background-color: var(--blue);
+    border: 1px solid var(--blue);
+    border-radius: 100%;
     font-family: var(--montserrat);
     padding: 8px 12px;
-    color: white;
-    border-radius: 8px;
+    color: var(--blue);
     font-size: 20px;
     cursor: pointer;
+}
+.talent .container .description .contact button:hover {
+    background-color: var(--blue);
+    color: var(--gray);
 }
 .talent .reveal {
     margin: 0;

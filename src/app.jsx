@@ -11,6 +11,7 @@ import header from "./assets/images/tco.webp"
 import users from "./assets/images/users.png"
 import girl from "./assets/images/girl_meet.png"
 import logo from "./assets/images/icon.webp"
+import sun from "./assets/images/sun.png"
 
 import facebook from "./assets/images/facebook.png"
 import whatsapp from "./assets/images/whatsapp.png"
@@ -67,6 +68,8 @@ const App = () => {
 
         <section className="talent">
             <div className="container">
+                
+                <img className="sun" src={sun} alt="giagram" />
                 <div className="image">
                     <Reveal delay={0.35}>
                         <img src={logo} alt="tu contador onllien icon" />
