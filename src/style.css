@@ -1,6 +1,6 @@
 @font-face {
-    font-family: poppins;
-    src: url('./fonts/Poppins/Poppins-Bold.ttf')
+    font-family: minal;
+    src: url('./fonts/Minal.otf')
 }
 
 @font-face {
@@ -9,16 +9,19 @@
 }
 html {
     scroll-behavior: smooth;
+    font-size: 16px;
   }
 :root {
-    --poppins: poppins;
+    --minal: minal;
     --montserrat: montserrat;
 
-    --blue: #1c68d3;
-    --dark-blue: #234b9b;
-    --black: #001752;
-    --orange: #f05f19;
-    --gray: #eeeeee;
+    --blue: #213a8f;
+    --orange: #f49534;
+    --yellow: #fbbd2c;
+    --brown: #ae6522;
+    --gray: #f8f2de;
+
+    --black: #000a39;
     --dark-gray: #e1f4f5;
 }
 
@@ -29,6 +32,7 @@ html {
 }
 body {
     background-color: var(--gray);
+    background-image: url("./assets/images/connected.png");
 }
 /* global */
 .loading {
@@ -38,8 +42,7 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background: rgb(35,75,155);
-    background: linear-gradient(0deg, rgba(35,75,155,1) 38%, rgba(80,180,225,1) 100%); 
+    background-color: var(--gray);
     z-index: 20;
     position: fixed;
     overflow: hidden;
@@ -50,9 +53,8 @@ body {
     animation: disappear 1s ease-in-out 1;
     height: 0;
 }
-.loading.animate h2,
-.loading.animate .square {
-    animation: disappearAnimation 0.8s ease-in-out 1;
+.loading.animate h2 {
+    animation: disappearAnimation 1s ease-in-out 1;
 }
 .loading img {
     position: absolute;
@@ -60,54 +62,25 @@ body {
 .loading h2 {
     z-index: 5;
     position: relative;
-    color: var(--dark-gray);
+    color: var(--brown);
     animation: animation 0.5s ease-in-out 1;
+    transition: 5s;
     animation-fill-mode: forwards;
-}
-.loading .square {
-    border: 1px solid var(--dark-gray);
-    width: 100px;
-    height: 100px;
-    animation: spin 5s linear;
-    margin-top: 50px;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.loading .square .dot {
-    width: 80px;
-    height: 80px;
-    position: absolute;
-    border: 1px solid var(--dark-gray);
-    animation: spin 2s ease-in-out;
-}
-@keyframes spin {
- 0% {
-    transform: rotate(0deg);
-    opacity: 1;
- }
- 100% {
-    transform: rotate(360deg);
-    opacity: 0;
- }
 }
 @keyframes animation {
     0% {
         opacity: 0;
-        transform: translateY(-300px)
     }
     100% {
         opacity: 1;
-        transform: translateY(0);
     }
 }
 @keyframes disappear {
     0% {
-        height: 100vh;
+        opacity: 1;
     }
     100% {
-        height: 0;
+        opacity: 0;
     }
 }
 @keyframes disappearAnimation {
@@ -124,9 +97,8 @@ body {
     color: var(--dark-gray);
 }
 .container {
-    max-width: 1200px;
+    max-width: 80vw;
     margin: auto;
-    padding: 0 1rem;
 }
 
 button {
@@ -135,31 +107,30 @@ button {
 }
 
 h1 {
-    font-family: var(--poppins);
+    font-family: var(--minal);
     color: var(--gray);
+    font-weight: lighter;
 }
 
 h2 {
-    font-family: var(--poppins);
-    color: var(--dark-blue);
+    font-family: var(--minal);
+    color: var(--brown);
     font-size: 2rem;
+    font-weight: lighter;
 }
 
 h3 {
-    font-family: var(--poppins);
-    color: var(--blue)
+    font-family: var(--minal);
+    color: var(--blue);
+    font-weight: lighter;
 }
 
 p {
     font-family: var(--montserrat);
 }
 
-section {
-    background-color: var(--gray);
-}
 
 span {
-    color: var(--dark-blue);
     font-family: var(--montserrat);
 }
 ul li {
@@ -178,8 +149,8 @@ ul li {
 }
 .icon-whatsapp {
     position: fixed;
-    right: 1rem;
-    bottom: 1rem;
+    right: 1.5rem;
+    bottom: 1.5rem;
     z-index: 100;
     background-color: white;
     border-radius: 100%;
@@ -190,14 +161,24 @@ ul li {
     align-items: center;
 }
 
+@media screen and (max-width: 1562px) {
+    .container {
+        max-width: 95vw;
+    }
+}
+@media screen and (max-width: 758px) {
+    .container {
+        max-width: 98vw;
+    }
+}
+
 /* global */
 nav {
     position: fixed;
     width: 100%;
     padding: 1rem;
     z-index: 10;
-}
-nav.scrolled {
+    border-bottom: 1px solid var(--orange);
     background-color: var(--gray);
 }
 nav .container {
@@ -208,29 +189,36 @@ nav .container {
 
 nav .container ul {
     display: flex;
-    font-size: 1rem;
-    font-family: var(--montserrat);
-    color: var(--gray);
     gap: 2rem;
 } 
 nav .items ul li a {
-    color: var(--gray);
+    color: var(--brown);
+    font-size: 1rem;
+    font-family: var(--minal);
     text-decoration: none;
 }
-nav.scrolled .items ul li a {
-    color: black;
-}
-nav.scrolled .items ul li:hover {
-    border-bottom: 2px solid var(--dark-blue);
-}
 nav .container .contact button {
-    background-color: var(--dark-blue);
-    border-radius: 5px;
-     color: white;
+    border: 1px solid var(--orange);
+    border-radius: 100%;
+     color: brown;
      display: flex;
      justify-content: center;
      align-items: center;
      padding: 8px 12px;
+}
+nav .container .logo {
+    /* width: 50px; */
+    display: flex;
+    align-items: center;
+}
+nav .container .logo p {
+    font-family: var(--minal);
+    color: var(--brown);
+    font-size: 1rem;
+    line-height: 1rem;
+}
+nav .container img {
+    width: 50px;
 }
 nav .mobile {
     display: none;       
@@ -239,12 +227,12 @@ nav .mobile .burger {
     cursor: pointer;
 }
 
-@media screen and (max-width: 832px) {
+@media screen and (max-width: 922px) {
     nav .desk {
         display: none;
     }
     nav .mobile {
-        display: flex; 
+        display: flex;
     }
     nav .mobile .items {
         background-color: var(--gray);
@@ -271,79 +259,90 @@ nav .mobile .burger {
         transition: opacity 0.5s ease;
     }
     nav .mobile .items ul li {
-        color: black;
         width: 100%;
         height: 100%;
         padding: 1rem;
     }
     nav .mobile .items ul li a {
-        color: black;
         width: 100%;
         display: block;
+        font-size: 2.5rem;
     }
-    nav .mobile .items ul li:hover {
-        background: var(--blue);
-        color: white;
+    nav .mobile .items ul li:hover a {
+        color: var(--blue);
         cursor: pointer;
+    }
+    nav .mobile .logo img {
+        z-index: 10;
+        position: relative;
     }
 }
 /* header */
 header {
-    background: rgb(35,75,155);
-    background: linear-gradient(0deg, rgb(35, 75, 156) 38%, rgba(80,180,225,1) 100%); 
-    padding-top: 8rem;
+    padding-top: 6rem;
+    padding-bottom: 4rem;
     position: relative;
-    /* background-color: #50b4e1; */
-    /* background-image: url("https://www.transparenttextures.com/patterns/cubes.png"); */
-    /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+    border-radius: 2rem;
 }
 header .container {
     display: flex;
 }
-header .container > div {
-    width: 100%;
+header .container .content-reveal {
+    display: flex;
+    justify-content: start;
+}
+header .container .reveal {
+    width: 60%;
 }
 header .container .titles {
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin-top: 2rem;
-    padding-bottom: 5rem;
+    padding: 5rem;
+    background-color: var(--brown);
+    background-image: url("./assets/images/geometry.png");
+
+    clip-path: polygon(0% 0%, 100% 0%, 90% 100%, 0% 110%);
 }
 header .container .titles p {
     color: var(--gray);
     font-size: 1rem;
-}
-header .container .titles p.name {
-    color: var(--gray);
-    font-size: 1rem;
-    background-color: #00175258;
-    background: rgb(35,75,155);
-    background: linear-gradient(87deg, rgba(35,75,155,1) 38%, rgba(80,180,225,1) 100%); 
-    padding: 1rem 1rem;
-    border: 1px solid var(--blue);
-    margin-bottom: 1rem;
+    width: 80%;
 }
 header .container .titles h1 {
-    font-size: 4rem;
-    line-height: 4rem;
+    font-size: 6rem;
+    line-height: 5rem;
     margin-bottom: 1rem;
+    color: var(--gray);
+    width: 80%;
 }
 header .container .image {
     display: flex;
-    align-items: end;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
 }
 header .container .image img {
-    max-width: 500px;
-    bottom: 0;
+    width: 500px;
 }
 header .container .titles .call-to-action {
-    display: flex;
+    display: block;
     font-size: 1rem;
     position: relative;
     margin-top: 2rem;
     cursor: pointer;
-    width: 100%;
+    width: fit-content;
+    background-color: var(--brown);
+    border: 1px double var(--gray);
+    border-radius: 100%;
+    padding: 12px 16px;
+    color: var(--gray);
+    /* border-radius: 8px; */
+}
+header .container .titles .call-to-action:hover {
+    background-color: var(--gray);
+    color: var(--brown);
 }
 header .reveal {
     margin: 0;
@@ -355,25 +354,7 @@ header .container .titles .call-to-action div {
     top: 0;
     color: white;
 }
-header .container .titles .call-to-action > div:nth-child(1) {
-    background-color: var(--blue);
-    position: relative;
-}
-header .container .titles .call-to-action > div:nth-child(2) {
-    background-color: var(--black);
-    position: relative;
-}
-header .container .titles .call-to-action span {
-    width: 20px;
-    height: 20px;
-    border-radius: 100%;
-    background-color: wheat;
-    position: absolute;
-    right: -10px;
-    z-index: 2;
-}
-
-@media screen and (max-width: 1192px) {
+@media screen and (max-width: 1360px) {
     header {
         padding: 2rem;
     }
@@ -381,146 +362,164 @@ header .container .titles .call-to-action span {
         padding-top: 4rem;
     }
     header .container .titles h1 {
-        font-size: 3rem;
+        font-size: 5rem;
+        line-height: 4rem;
+    }
+    header .container .image {
+        justify-content: center;
+        width: 100%;
     }
     header .container .image img {
-        width: 450px;
+        width: 400px;
     }
     header .container .titles p.name {
         font-size: 1rem;
     }
 }
-@media screen and (max-width: 1078px) {
-    header .container .titles .call-to-action {
-        font-size: 1rem;
-        width: 100%;
-    }
-}
-@media screen and (max-width: 886px) {
+@media screen and (max-width: 1044px) {
     header .container .titles {
-        width: 100%;
-        z-index: 5;
+        padding: 3rem;
     }
-    header .container .image {
-        width: 40%;
-    }
-    header .container .image img {
-        position: absolute;
-        z-index: 0;
+    header .container .titles h1 {
+        font-size: 4.5rem;
+        line-height: 4rem;
     }
 }
-@media screen and (max-width: 782px) {
+@media screen and (max-width: 936px) {
+    header .container .image img {
+        width: 350px;
+    }
+}
+@media screen and (max-width: 896px) {
     header .container {
+        display: flex;
         flex-direction: column;
-        padding: 0;
+    }
+    header .container div {
+        width: 100%;
     }
     header .container .image {
         order: 1;
-        position: relative;
-        padding-top: 0;
+        margin-top: 2rem;
+    }
+    header .container .reveal {
         width: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    header .container .image img {
-        position: relative;
-        filter: brightness(100%);
-        width: 70%;
-        margin-top: -50px;
-        margin-left: 0;
-    }
-    header .container .titles p.name { 
-        padding: 1rem 2rem;
     }
     header .container .titles {
-        align-items: center;
         text-align: center;
-        z-index: 1;
-        width: 100%;
-    }
-    header .container > div {
-        width: 100%;
-        display: flex;
         justify-content: center;
         align-items: center;
+        width: 100%;
+        clip-path: polygon(0% 0%, 100% 0%, 90% 100%, 8% 100%);
     }
-    header .container .titles .call-to-action {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-}
-@media screen and (max-width: 480px) {
-    header {
-        padding: 2rem 1rem;
-    }
-    header .container .titles p.name { 
-        padding: 0.5rem 2rem;
+    header .container .titles h1 {
+        width: 100%;
     }
 }
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 510px) {
+    header .container .titles h1 {
+        font-size: 4rem;
+        line-height: 3.5rem;
+    }
+}
+@media screen and (max-width: 510px) {
+    header .container .titles h1 {
+        font-size: 3.5rem;
+        line-height: 3rem;
+    }
+}
+@media screen and (max-width: 415px) {
+    header .container .titles h1 {
+        font-size: 3rem;
+        line-height: 2.5rem;
+    }
+}
+@media screen and (max-width: 375px) {
+    header .container .titles h1 {
+        font-size: 2.5rem;
+        line-height: 2rem;
+    }
+    header .container .image img {
+        width: 250px;
+        margin: 0rem;
+    }
+}
+@media screen and (max-width: 345px) {
     header .container .titles h1 {
         font-size: 2rem;
         line-height: 2rem;
     }
 }
+
 /* quelities */
 .quelities {
     position: relative;
-    
-    background-image: url("./assets/images/fake-luxury.png");
+    padding: 2rem 0;
+}
+.quelities .container {
+    margin-top: -2rem;
 }
 .quelities svg {
     position: absolute;
 }
 .quelities .cards {
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    border-bottom: none;
     display: flex;
     text-align: center;
-    margin-top: -3rem;
-    max-width: 1000px;
+    max-width: 80%;
     margin-left: auto;
     margin-right: auto;
+    gap: 1rem;
 }
 .quelities .card {
+    padding: 2rem 3rem;
+    border: 5px double var(--gray);
     background-color: var(--blue);
-    padding: 1rem 1rem 3rem;
-    padding-bottom: 3rem;
-    border: 1px solid var(--gray);
-    color: white;
     /* height: fit-content; */
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-}
-.quelities .card h3 {
     color: var(--gray);
 }
+.quelities .card h3 {
+    color: var(--orange);
+    letter-spacing: 2px;
+    font-weight: lighter;
+    font-family: var(--minal);
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+}
 .quelities .card div {
-    background-color: var(--black);
-    color: white;
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    bottom: -25px;
-    font-size: 30px;
+    color: var(--yellow);
+    font-size: 2rem;
+}
+@media screen and (max-width: 1315px) {
+    .quelities .card {
+        padding: 2rem 2rem;
+    }
+}
+@media screen and (max-width: 975px) {
+    .quelities .cards {
+        max-width: none;
+    }
+    .quelities .card {
+        padding: 1rem;
+    }
 }
 @media screen and (max-width: 782px) {
     .quelities .card {
         padding: 1rem 0.5rem 3rem;
-        padding-bottom: 3rem;
     }
 }
 @media screen and (max-width: 620px) {
     .quelities .cards {
         flex-direction: column;
-        padding: 0 2rem;
+        padding: 0 0.5rem;
     }
     .quelities .card {
         padding-bottom: 2rem;
@@ -533,25 +532,42 @@ header .container .titles .call-to-action span {
 }
 /* talent */
 .talent {
-    background-image: url("./assets/images/fake-luxury.png");
+    padding: 2rem;
 }
 .talent .container {
+    background-color: var(--yellow);
     display: flex;
+    border-radius: 2rem;
+    max-width: 80%;
+    overflow: hidden;
+}
+.talent .container .image {
+    background-image: url("./assets/images/washi.png");
     padding: 5rem 0;
-}
+    position: relative;
+    width: 40%;
+    display: flex;
+    justify-content: center;
+}   
 .talent .container .image img {
-    width: 100%;
-    position: sticky;
-    top: 50px;
-}
-.talent .container > div {
-    width: 50%;
+    left: 0;
+    width: 400px;
 }
 .talent .container .description {
-    width: 80%;
-    padding-left: 2rem;
+    width: 50%;
+    padding: 5rem 2rem;
+    color: var(--blue);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
 }
-
+.talent .container .description h2 {
+    color: var(--blue);
+    font-weight: lighter;
+    font-size: 2.5rem;
+    line-height: 2rem;
+    margin-top: 1rem;
+}
 .talent .container .description span {
     font-family: var(--montserrat);
 }
@@ -587,48 +603,60 @@ header .container .titles .call-to-action span {
 .talent .reveal {
     margin: 0;
 }
-@media screen and (max-width: 760px) {
+@media screen and (max-width: 905px) {
     .talent .container {
-        padding: 5rem 0rem 0rem;
         gap: 3rem;
         flex-direction: column;
         align-items: center;
+        max-width: 90%;
+    }
+    .talent .container .image {
+        width: 100%;
+        padding: 5rem;
     }
     .talent .container .description {
         width: 100%;
         padding: 2rem;
     }
-    .talent .container > div {
-        width: 90%;
+}
+@media screen and (max-width: 635px) {
+    .talent .container {
+        max-width: 100%;
     }
 }
 /* Services */
 .services {
-    background-color: var(--dark-gray);
     text-align: center;
-    
     padding: 5rem 0;
+    color: var(--brown);
 }
 .services .cards {
     display: flex;
     gap: 10px;
     margin-top: 3rem;
 }
+.services span {
+    color: var(--blue);
+    font-size: 1.5rem;
+}
+.services h2 {
+    font-size: 2rem;
+    color: var(--blue);
+}
 .services .cards .card {
-    border-top-right-radius: 25px;
-    border-bottom-left-radius: 25px;
-    background-color: var(--dark-blue);
-    padding: 2rem 1rem;
-    color: white;
+    border: 5px double var(--brown);
+    background-color: var(--yellow);
+    padding: 2rem 1rem 1rem;
+    color: var(--blue);
     width: 20%;
     min-width: 183px;
 }
-.services .cards .card:hover {
-    background-color: var(--black);
-
-}
 .services .cards .card h3 {
-    color: var(--gray);
+    color: var(--brown);
+    font-weight: lighter;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    line-height: 1.5rem;
 }
 @media screen and (max-width: 1216px) {
     .services .cards {
@@ -857,7 +885,7 @@ header .container .titles .call-to-action span {
     max-width: 1000px;
     margin: auto;
     text-align: center;
-    background-color: var(--dark-blue);
+    background-color: var(--brown);
     padding: 5rem 3rem;
     z-index: 5;
     position: relative;
@@ -870,7 +898,7 @@ header .container .titles .call-to-action span {
     cursor: pointer;
     background: var(--blue);
     color: var(--gray);
-    font-family: var(--poppins);
+    font-family: var(--minal);
     background: rgb(35,75,155);
     background: linear-gradient(87deg, rgb(20, 55, 125) 38%, rgba(80,180,225,1) 100%); 
     display: flex;
@@ -970,7 +998,7 @@ header .container .titles .call-to-action span {
     color: var(--gray);
 }
 .footer .address .item p {
-    font-family: var(--poppins);
+    font-family: var(--minal);
 }
 .footer .about {
     display: flex;

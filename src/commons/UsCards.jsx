@@ -22,6 +22,6 @@ export const UsCards = ({ item, delay }) => {
         transition={{ duration: 0.5, delay: delay }} className="card">
         <h3>{item.title}</h3>
         <p>{item.p}</p>
-        <div className="plus">+</div>
+        <div className="plus">*****</div>
     </motion.div>
 }

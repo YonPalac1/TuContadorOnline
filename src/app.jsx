@@ -7,10 +7,10 @@ import Questions from "./components/Questions";
 import FooterSocial from "./components/FooterSocial";
 import Navbar from "./components/Navbar";
 
-import header from "./assets/images/header.png"
-import foto from "./assets/images/foto.png"
+import header from "./assets/images/tco.webp"
 import users from "./assets/images/users.png"
 import girl from "./assets/images/girl_meet.png"
+import logo from "./assets/images/icon.webp"
 
 import facebook from "./assets/images/facebook.png"
 import whatsapp from "./assets/images/whatsapp.png"
@@ -27,7 +27,7 @@ const App = () => {
         const interval = setTimeout(() => {
             window.scrollTo(0, 0)
             setLoading(true)
-        }, 2000);
+        }, 2500);
 
         //Clearing the interval
         return () => clearInterval(interval);
@@ -35,9 +35,7 @@ const App = () => {
     return <>
         <div className={`loading ${loading ? "animate" : ""}`}>
             <h2>Tu Contador Online</h2>
-            <div className="square">
-                <div className="dot"></div>
-            </div>
+            {/* <img src={logo} alt="logo Tu contador online" /> */}
         </div>
         <div className="icon-whatsapp">
             <WhatsappIcon />
@@ -45,39 +43,23 @@ const App = () => {
         <Navbar />
         <header>
             <div className="container">
-                <div className="titles">
-                    <Reveal delay={2.50}>
-                        <p className="name">Tu contador online</p>
-                    </Reveal>
-                    <Reveal delay={2.80}>
-                        <h1>Soluciones financieras para tu negocio</h1>
-                    </Reveal>
-                    <Reveal delay={3}>
-                        <p>Asesoramiento personalizado con profesionales experimentados para darte servicios contables integrales</p>
-                    </Reveal>
-                    <Reveal delay={3.25}>
-                        <button className="call-to-action">
-                            <div>
-                                asesorate ahora
-                                <span></span>
-                            </div>
-                            <div>
-                                sin cargo
-                            </div>
-                        </button>
-                    </Reveal>
-                </div>
-
                 <div className="image">
                     <Reveal delay={3.85}>
                         <img src={header} alt=""></img>
                     </Reveal>
                 </div>
+                    <Reveal delay={2.80}>
+                <div className="titles">
+                        <h1>Soluciones financieras para tu negocio</h1>
+                        <p>Asesoramiento personalizado con profesionales experimentados para darte servicios contables integrales</p>
+                        <button className="call-to-action">
+                            asesorate ahora
+                        </button>
+                </div>
+                    </Reveal>
             </div>
         </header>
         <section className="quelities" id="nosotros">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#234b9b" d="M0,160L60,154.7C120,149,240,139,360,117.3C480,96,600,64,720,64C840,64,960,96,1080,101.3C1200,107,1320,85,1380,74.7L1440,64L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z"></path></svg>
-
             <div className="container">
                 <QualitiesCards />
             </div>
@@ -87,7 +69,7 @@ const App = () => {
             <div className="container">
                 <div className="image">
                     <Reveal delay={0.35}>
-                        <img src={foto} alt="" />
+                        <img src={logo} alt="tu contador onllien icon" />
                     </Reveal>
                 </div>
                 <div className="description">
@@ -204,7 +186,7 @@ const App = () => {
             </div>
         </section>
 
-        
+
 
         <footer className="footer">
             <div className="container">
