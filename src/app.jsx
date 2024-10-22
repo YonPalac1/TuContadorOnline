@@ -69,7 +69,6 @@ const App = () => {
         <section className="talent">
             <div className="container">
                 
-                <img className="sun" src={sun} alt="giagram" />
                 <div className="image">
                     <Reveal delay={0.35}>
                         <img src={logo} alt="tu contador onllien icon" />

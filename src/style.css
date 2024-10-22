@@ -548,9 +548,8 @@ header .container .titles .call-to-action div {
 }
 .talent .container .sun {
     position: absolute;
-    bottom: -5rem;
+    bottom: -3rem;
     right: -3rem;
-    width: 200px;
 }
 .talent .container .image {
     background-image: url("./assets/images/washi.png");
