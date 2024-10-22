@@ -277,6 +277,11 @@ nav .mobile .burger {
         position: relative;
     }
 }
+@media screen and (max-width: 500px) {
+    nav .mobile .items ul li a {
+        font-size: 2rem;
+    }
+}
 /* header */
 header {
     padding-top: 5rem;
