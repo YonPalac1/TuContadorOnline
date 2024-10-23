@@ -6,20 +6,22 @@ import HowToWorks from "./components/HowToWorks";
 import Questions from "./components/Questions";
 import FooterSocial from "./components/FooterSocial";
 import Navbar from "./components/Navbar";
+import WhatsappIcon from "./components/Whatsapp";
+import Feedback from "./components/Feedback";
+import { Reveal } from "./commons/Reveal";
 
-import header from "./assets/images/tco.webp"
-import users from "./assets/images/users.png"
-import girl from "./assets/images/girl_meet.png"
-import logo from "./assets/images/icon.webp"
-import sun from "./assets/images/sun.png"
+import header from "./assets/images/tco.png"
+import arrow from "./assets/images/arrow.png"
+import circleText from "./assets/images/circle-text.png"
+import tcook from "./assets/images/tco-ok.png"
+import tcomeet from "./assets/images/tco-meet.png"
 
 import facebook from "./assets/images/facebook.png"
 import whatsapp from "./assets/images/whatsapp.png"
 import instagram from "./assets/images/instagram.png"
+
 import { CARDS_SERVICES } from "./constants";
-import { Reveal } from "./commons/Reveal";
-import WhatsappIcon from "./components/Whatsapp";
-import Feedback from "./components/Feedback";
+import MarqueeComponent from "./components/MarqueeComponent";
 
 const App = () => {
     const [loading, setLoading] = useState(false);
@@ -36,7 +38,6 @@ const App = () => {
     return <>
         <div className={`loading ${loading ? "animate" : ""}`}>
             <h2>Tu Contador Online</h2>
-            {/* <img src={logo} alt="logo Tu contador online" /> */}
         </div>
         <div className="icon-whatsapp">
             <WhatsappIcon />
@@ -45,19 +46,22 @@ const App = () => {
         <header>
             <div className="container">
                 <div className="image">
-                    <Reveal delay={3.85}>
+                    <Reveal delay={2.85}>
                         <img src={header} alt=""></img>
                     </Reveal>
                 </div>
-                    <Reveal delay={2.80}>
-                <div className="titles">
+                <Reveal delay={2.80}>
+                    <div className="titles">
                         <h1>Soluciones financieras para tu negocio</h1>
                         <p>Asesoramiento personalizado con profesionales experimentados para darte servicios contables integrales</p>
-                        <button className="call-to-action">
-                            asesorate ahora
-                        </button>
-                </div>
-                    </Reveal>
+                        <div className="button">
+                            <button className="call-to-action">
+                                *Asesorate ahora*
+                            </button>
+                            <img className="arrow" src={ arrow } alt="flecha a consulta ahora" />
+                        </div>
+                    </div>
+                </Reveal>
             </div>
         </header>
         <section className="quelities" id="nosotros">
@@ -68,10 +72,11 @@ const App = () => {
 
         <section className="talent">
             <div className="container">
-                
+
                 <div className="image">
+                    <img className="circle-text" src={ circleText } alt="Tu contador online" />
                     <Reveal delay={0.35}>
-                        <img src={logo} alt="tu contador onllien icon" />
+                        <img className="ok" src={ tcook } alt="tu contador online icon" />
                     </Reveal>
                 </div>
                 <div className="description">
@@ -88,19 +93,16 @@ const App = () => {
                             Nuestro equipo de expertos se compromete a brindarte servicios contables integrales y personalizados, para que puedas tomar decisiones informadas y alcanzar el éxito.
                         </p>
                     </Reveal>
-
-                    <Reveal delay={0.80}>
-                        <div className="contact">
-                            <button>leer más</button>
-
-                            <div>
-                                <p>Dejanos tu mensaje en:
-                                    <br />
-                                    +00 0 00 0000 0000</p>
-
-                            </div>
+                    <div className="contact">
+                        <div>
+                            <p>Seguinos </p>
+                            <a href="">*Instagram*</a>
                         </div>
-                    </Reveal>
+                        <div>
+                            <p>o escribinos</p>
+                            <a href="">*Whatsapp*</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -129,11 +131,11 @@ const App = () => {
         </section>
 
         <section className="contact-to-meet" id="hablemos">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#ae6522" fill-opacity="1" d="M0,64L1440,128L1440,0L0,0Z"></path></svg>
+            <svg viewBox="0 0 1440 320"><path fill="#ae6522" fillOpacity="1" d="M0,64L1440,128L1440,0L0,0Z"></path></svg>
             <div className="container">
                 <div className="image">
                     <Reveal delay={0.35}>
-                        <img src={girl} alt="" />
+                        <img src={ tcomeet } alt="Agenda una reunion" />
                     </Reveal>
                 </div>
 
@@ -142,8 +144,7 @@ const App = () => {
                         <span>Hablemos</span>
                         <h2>Agendá una reunión con nuestros expertos y obten una consulta gratuita y personalizada</h2>
                         <div>
-                            <img src={users} alt="" />
-                            <button>Consultanos</button>
+                            <button>*Consultanos*</button>
                         </div>
                     </div>
                 </Reveal>
@@ -161,7 +162,7 @@ const App = () => {
                     <input type="text" placeholder="Email"></input>
                     <label>Mensaje</label>
                     <textarea type="text" placeholder="Mensaje"></textarea>
-                    <button>Enviar</button>
+                    <button>* Enviar *</button>
                 </form>
             </div>
         </section>
@@ -178,7 +179,6 @@ const App = () => {
         </section>
 
         <section className="frecuent-questions" id="preguntas-frecuentes">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#e1f4f5" d="M0,160L60,138.7C120,117,240,75,360,53.3C480,32,600,32,720,53.3C840,75,960,117,1080,144C1200,171,1320,181,1380,186.7L1440,192L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z"></path></svg>
             <div className="container">
                 <h2>Preguntas frecuentes</h2>
 

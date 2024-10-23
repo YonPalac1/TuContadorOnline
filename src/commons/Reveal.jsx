@@ -19,13 +19,13 @@ export const Reveal = ({ children, width = "fit-content", delay }) => {
         className="reveal">
             <motion.div
                 variants={{
-                    hidden: { opacity: 0, y: 1 },
+                    hidden: { opacity: 0, y: 100 },
                     visible: { opacity: 1, y: 0 },
                 }}
                 className="content-reveal"
                 initial="hidden"
                 animate={mainControls}
-                transition={{ duration: 0.5, delay: delay }}
+                transition={{ type: "spring", damping: 10, duration: 0.5, delay: delay }}
             >{children}</motion.div> 
         </div >)
 }

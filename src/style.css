@@ -69,9 +69,11 @@ body {
 }
 @keyframes animation {
     0% {
+        transform: translateY(-200px);
         opacity: 0;
     }
     100% {
+        transform: translateY(0);
         opacity: 1;
     }
 }
@@ -160,7 +162,6 @@ ul li {
     justify-content: center;
     align-items: center;
 }
-
 @media screen and (max-width: 1562px) {
     .container {
         max-width: 95vw;
@@ -194,17 +195,11 @@ nav .container ul {
 nav .items ul li a {
     color: var(--brown);
     font-size: 1rem;
-    font-family: var(--minal);
+    font-family: var(--montserrat);
     text-decoration: none;
 }
-nav .container .contact button {
-    border: 1px solid var(--orange);
-    border-radius: 100%;
-     color: brown;
-     display: flex;
-     justify-content: center;
-     align-items: center;
-     padding: 8px 12px;
+nav .container .contact img {
+    width: 2rem;
 }
 nav .container .logo {
     /* width: 50px; */
@@ -267,6 +262,7 @@ nav .mobile .burger {
         width: 100%;
         display: block;
         font-size: 2.5rem;
+        font-family: var(--minal);
     }
     nav .mobile .items ul li:hover a {
         color: var(--blue);
@@ -312,7 +308,8 @@ header .container .titles {
 }
 header .container .titles p {
     color: var(--gray);
-    font-size: 1rem;
+    font-weight: bold;
+    font-size: 1.3rem;
     width: 80%;
 }
 header .container .titles h1 {
@@ -333,31 +330,51 @@ header .container .image img {
 }
 header .container .titles .call-to-action {
     display: block;
-    font-size: 1rem;
+    font-size: 1.8rem;
     position: relative;
     margin-top: 2rem;
     cursor: pointer;
     width: fit-content;
-    background-color: var(--brown);
-    border: 1px double var(--gray);
+    background-color: var(--gray);
     border-radius: 100%;
-    padding: 12px 16px;
-    color: var(--gray);
+    color: var(--brown);
+    font-family: var(--minal);
     /* border-radius: 8px; */
 }
 header .container .titles .call-to-action:hover {
-    background-color: var(--gray);
-    color: var(--brown);
+    background-color: var(--brown);
+    color: var(--gray);
 }
 header .reveal {
     margin: 0;
 }
-
+header .container .titles .button {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+header .container .titles .arrow {
+    width: 4rem;
+    margin-top: 1rem;
+}
 header .container .titles .call-to-action div {
     padding: 1rem 2rem;
     height: 100%;
     top: 0;
     color: white;
+}
+@media screen and (max-width: 1435px) {
+    header .container .titles {
+        padding: 3rem;
+    }
+    header .container .titles h1 {
+        font-size: 5.5rem; 
+        line-height: 4.5rem;
+        width: 90%;
+    }
+    header .container .image img { 
+        width: 400px;
+    }
 }
 @media screen and (max-width: 1360px) {
     header {
@@ -382,19 +399,7 @@ header .container .titles .call-to-action div {
     }
 }
 
-@media screen and (max-width: 1435px) {
-    header .container .titles {
-        padding: 3rem;
-    }
-    header .container .titles h1 {
-        /* font-size: 4.5rem; 
-        line-height: 4rem; */
-        width: 90%;
-    }
-    header .container .image img { 
-        width: 400px;
-    }
-}
+
 @media screen and (max-width: 896px) {
     header .container {
         display: flex;
@@ -489,12 +494,14 @@ header .container .titles .call-to-action div {
     align-items: center;
     flex-direction: column;
     color: var(--gray);
+    font-size: 1.1rem;
 }
 .quelities .card h3 {
     color: var(--orange);
     letter-spacing: 2px;
     font-weight: lighter;
-    font-family: var(--minal);
+    font-family: var(--montserrat);
+    font-weight: bolder;
     margin-bottom: 1rem;
     font-size: 1.5rem;
     line-height: 1.5rem;
@@ -521,7 +528,7 @@ header .container .titles .call-to-action div {
         padding: 1rem 0.5rem 3rem;
     }
 }
-@media screen and (max-width: 620px) {
+@media screen and (max-width: 654px) {
     .quelities .cards {
         flex-direction: column;
         padding: 0 0.5rem;
@@ -551,16 +558,34 @@ header .container .titles .call-to-action div {
     right: -3rem;
 }
 .talent .container .image {
-    background-image: url("./assets/images/washi.png");
-    padding: 5rem 0;
+    background-color: var(--orange);
+    background-image: url("./assets/images/elastoplast.png");
     position: relative;
     width: 40%;
     display: flex;
     justify-content: center;
+    align-items: center;
+    overflow: hidden;
 }   
 .talent .container .image img {
-    left: 0;
-    width: 400px;
+    width: 500px;
+    z-index: 10;
+}
+.talent .container .image img.ok {
+    margin-right: -5rem;
+}
+.talent .container .image .circle-text {
+    position: absolute;
+    animation: spin infinite 15s linear;
+    z-index: 0;
+}
+@keyframes spin {
+    0% {
+        transform: rotate(0);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
 }
 .talent .container .description {
     width: 50%;
@@ -579,39 +604,35 @@ header .container .titles .call-to-action div {
 }
 .talent .container .description span {
     font-family: var(--montserrat);
+    font-size: 1.3rem;
 }
 .talent .container .description p {
     margin-top: 1rem;
-}
-.talent .container .description .contact p {
-    margin-top: 0;
+    font-size: 1.2rem;
 }
 .talent .container .description .contact {
     display: flex;
-    /* justify-content: center; */
+    justify-content: space-around;
     align-items: center;
-    gap: 12px;
     margin-top: 3rem;
 }
-.talent .container .description .contact svg {
-    background-color: var(--blue);
-    color: white;
-    height: 40px;
-    width: 40px;
-    border-radius: 5px;
+.talent .container .description .contact div {
+    text-align: center;
 }
-.talent .container .description .contact button {
-    border: 1px solid var(--blue);
-    border-radius: 100%;
-    font-family: var(--montserrat);
-    padding: 8px 12px;
+.talent .container .description .contact a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    font-family: var(--minal);
+    font-size: 2rem;
+    color: var(--yellow);
+    border-radius: 100% ;
+    background-color: var(--blue);
+    margin-top: 1rem;
+}
+.talent .container .description .contact a:hover {
     color: var(--blue);
-    font-size: 20px;
-    cursor: pointer;
-}
-.talent .container .description .contact button:hover {
-    background-color: var(--blue);
-    color: var(--gray);
+    background-color: var(--yellow);
 }
 .talent .reveal {
     margin: 0;
@@ -636,13 +657,14 @@ header .container .titles .call-to-action div {
     .talent .container {
         max-width: 100%;
     }
-}
-@media screen and (max-width: 635px) {
     .talent .container .image {
         padding: 4rem 0 2rem;
     }
     .talent .container .image img {
         max-width: 300px;
+    }
+    .talent .container .description .contact  {
+        flex-direction: column;
     }
 }
 /* Services */
@@ -657,12 +679,12 @@ header .container .titles .call-to-action div {
     margin-top: 3rem;
 }
 .services span {
-    color: var(--blue);
-    font-size: 1.5rem;
+    color: var(--brown);
+    font-size: 1.3rem;
 }
 .services h2 {
-    font-size: 2rem;
-    color: var(--blue);
+    font-size: 2.5rem;
+    color: var(--brown);
 }
 .services .cards .card {
     border: 5px double var(--brown);
@@ -671,6 +693,7 @@ header .container .titles .call-to-action div {
     color: var(--blue);
     width: 20%;
     min-width: 183px;
+    font-size: 1.1rem;
 }
 .services .cards .card h3 {
     color: var(--brown);
@@ -714,12 +737,15 @@ header .container .titles .call-to-action div {
 .how-works h2 {
     color: var(--gray);
     line-height: 2rem;
-    font-size: 2rem;
+    font-size: 2.5rem;
     margin-top: 1rem;
 }
 .how-works span {
     color: white;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
+}
+.how-works .title p {
+    font-size: 1.2rem;
 }
 .how-works .cards {
     display: grid;
@@ -794,14 +820,21 @@ header .container .titles .call-to-action div {
 }
 /* contact-to-meet */
 .contact-to-meet {
-    padding: 8rem 0;
+    padding: 12rem 0 2rem;
     position: relative;
-    background-color: var(--gray);
-    background-image: url("./assets/images/connected.png");
 }
 .contact-to-meet svg {
     position: absolute;
     top: -2px;
+}
+.contact-to-meet span {
+    color: var(--brown);
+    font-size: 1.3rem;
+}
+.contact-to-meet h2 {
+    color: var(--brown);
+    font-size: 2.5rem;
+    line-height: 2.5rem;
 }
 .contact-to-meet .container {
     display: flex;
@@ -830,18 +863,23 @@ header .container .titles .call-to-action div {
     cursor: pointer;
 }
 .contact-to-meet .container .data div button {
-    background-color: var(--blue);
-    font-family: var(--montserrat);
-    padding: 8px 12px;
-    border-radius: 8px;
-    color: white;
-    font-size: 20px;
+    background-color: var(--brown);
+    border-radius: 100%;
+    font-family: var(--minal);
+    color: var(--gray);
+    font-size: 2rem;
     cursor: pointer;
-    height: 40px;
+    padding: 0.5rem 0;
+}
+.contact-to-meet .container .data div button:hover {
+    background-color: var(--gray);
+    color: var(--brown);
+
 }
 @media screen and (max-width: 760px) {
     .contact-to-meet .container {
         flex-direction: column;
+        padding: 2rem;
     }
     .contact-to-meet .container > div {
         width: 100%;
@@ -855,12 +893,26 @@ header .container .titles .call-to-action div {
 }
 /* clients-feedback */
 .clients-feedback {
-    background-color: var(--dark-gray);
+    background-color: var(--blue);
+    background-image: url("./assets/images/geometry.png");
     text-align: center;
-    padding: 5rem 0;
+    padding: 5rem 2rem;
+    margin-top: 2rem;
 }
 .clients-feedback p {
     margin-top: 2rem;
+}
+.clients-feedback .container span {
+    font-size: 1.3rem;
+    color: var(--gray);
+}
+.clients-feedback .container h3 {
+    color: var(--yellow);
+
+}
+.clients-feedback .container h2 {
+    font-size: 2.5rem;
+    color: var(--gray);
 }
 .clients-feedback .feedbacks {
     display: flex;
@@ -877,31 +929,33 @@ header .container .titles .call-to-action div {
 .clients-feedback .feedbacks span {
     width: 10px;
     height: 10px;
-    background-color: var(--black);
+    background-color: var(--gray);
     position: relative;
     display: flex;
     border-radius: 100%;
 }
+.clients-feedback .feedbacks p {
+    color: var(--gray);
+}
 .clients-feedback .feedbacks .bullet-0 span:nth-child(1) {
-    background-color: rgb(17, 255, 255);
+    background-color: var(--yellow);
 }
 .clients-feedback .feedbacks .bullet-1 span:nth-child(2) {
-    background-color: rgb(17, 255, 255);
+    background-color: var(--yellow);
 }
 .clients-feedback .feedbacks .bullet-2 span:nth-child(3) {
-    background-color: rgb(17, 255, 255);
+    background-color: var(--yellow);
 }
 .clients-feedback .feedbacks .bullet-3 span:nth-child(4) {
-    background-color: rgb(17, 255, 255);
+    background-color: var(--yellow);
 }
 .clients-feedback .feedbacks .bullet-4 span:nth-child(5) {
-    background-color: rgb(17, 255, 255);
+    background-color: var(--yellow);
 }
 /* questions */
 .frecuent-questions {
     position: relative;
-    background: rgb(35,75,155);
-    background: linear-gradient(0deg, rgb(6, 27, 71) 38%, rgba(80,180,225,1) 100%); 
+    margin-top: 2rem;
 }
 .frecuent-questions svg {
     position: absolute;
@@ -910,13 +964,14 @@ header .container .titles .call-to-action div {
 }
 .frecuent-questions span,
 .frecuent-questions h2 {
-    color: var(--gray);
+    color: var(--blue);
 }
 .frecuent-questions .container {
     max-width: 1000px;
     margin: auto;
     text-align: center;
-    background-color: var(--brown);
+    background-color: var(--yellow);
+    clip-path: polygon(0% 0%, 100% 5%, 98% 100%, 0% 100%);
     padding: 5rem 3rem;
     z-index: 5;
     position: relative;
@@ -924,14 +979,10 @@ header .container .titles .call-to-action div {
 .questions {
     margin-bottom: 2rem;
     padding: 1rem;
-    border-bottom-left-radius: 12px;
-    border-top-right-radius: 12px;
     cursor: pointer;
     background: var(--blue);
     color: var(--gray);
-    font-family: var(--minal);
-    background: rgb(35,75,155);
-    background: linear-gradient(87deg, rgb(20, 55, 125) 38%, rgba(80,180,225,1) 100%); 
+    font-family: var(--montserrat);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -945,7 +996,7 @@ header .container .titles .call-to-action div {
 }
 
 .questions.active {
-    background: var(--black);
+    background: var(--blue);
 }
 .questions .answer {
     position: relative;
@@ -969,10 +1020,15 @@ header .container .titles .call-to-action div {
     background-color: var(--gray);
     background-image: url("./assets/images/fake-luxury.png");
     text-align: center;
-    padding: 5rem 2rem;
+    color: var(--blue);
 }
 .contact-form h2 {
     color: var(--blue);
+    font-size: 2.5rem;
+}
+.contact-form span {
+    font-size: 1.3rem;
+
 }
 .contact-form form {
     display: flex;
@@ -981,6 +1037,7 @@ header .container .titles .call-to-action div {
     max-width: 1000px;
     margin: auto;
     text-align: left;
+    padding: 0 2rem;
 }
 .contact-form form label {
     margin-top: 1.3rem;
@@ -997,8 +1054,11 @@ header .container .titles .call-to-action div {
 .contact-form form button {
     color: var(--gray);
     background-color: var(--blue);
+    background-image: url("./assets/images/geometry.png");
     margin-top: 2rem;
-    padding: 1rem 2rem;
+    font-family: var(--minal);
+    font-size: 2rem;
+    clip-path: polygon(0% 0%, 100% 0%, 95% 100%, 2% 100%);
     cursor: pointer;
 }
 .contact-form form button:hover {
@@ -1008,11 +1068,10 @@ header .container .titles .call-to-action div {
 }
 /* Footer */
 .footer {
-    background: var(--black);
+    
+    background-color: var(--brown);
+    background-image: url("./assets/images/geometry.png");
     padding: 2rem;
-    background: rgb(35,75,155);
-    background: linear-gradient(0deg, rgb(1, 14, 39) 38%, rgb(6, 27, 71) 100%);
-    background: #020110;
 }
 .footer .address {
     display: flex;
@@ -1095,3 +1154,5 @@ header .container .titles .call-to-action div {
         flex-direction: column;
     }
 }
+
+
