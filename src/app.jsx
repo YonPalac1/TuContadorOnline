@@ -21,7 +21,6 @@ import whatsapp from "./assets/images/whatsapp.png"
 import instagram from "./assets/images/instagram.png"
 
 import { CARDS_SERVICES } from "./constants";
-import MarqueeComponent from "./components/MarqueeComponent";
 
 const App = () => {
     const [loading, setLoading] = useState(false);
